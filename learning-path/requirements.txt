@@ -1,0 +1,52 @@
+# ============================================================================
+# JAX Learning Journey - Tutorial Dependencies
+# ============================================================================
+# These are the packages I use in the 6 notebooks in this folder. Install 
+# these before starting the tutorials.
+# GPU/CUDA Support: Both JAX and PyTorch are configured for NVIDIA GPU usage.
+# If you don't have a GPU, the CPU versions will work (just slower for training).
+
+
+# Installation Instructions:
+
+
+# - JAX (GPU): pip install --upgrade pip
+# NVIDIA CUDA 13 installation: pip install --upgrade "jax[cuda13]"
+# Note: wheels only available on linux.
+# Alternatively, for CUDA 12, use: pip install --upgrade "jax[cuda12]"
+
+# - JAX (CPU): pip install --upgrade pip; pip install --upgrade jax
+
+# - PyTorch (GPU): pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+
+# - PyTorch (CPU): pip install torch torchvision
+
+
+# - Then: pip install -r requirements.txt
+# ============================================================================
+# Versions tested with: Python 3.13, CUDA 13.0, PyTorch 2.9.1, JAX 0.4.37+
+# ============================================================================
+
+## Core ML Frameworks (GPU-enabled)
+# JAX with CUDA 13 support (NVIDIA GPU) - install separately with pip install "jax[cuda13]"
+# PyTorch with CUDA 13 support (NVIDIA GPU) - install separately with index URL
+# Note: These are not in requirements.txt due to special installation flags
+
+## Data Processing & Scientific Computing
+numpy>=2.0.0  # NumPy 2.0+ (compatible with JAX 0.4.35+)
+polars>=0.19.0  # Fast dataframe library (3-5x faster than pandas)
+scikit-learn>=1.3.0  # For metrics, preprocessing, dataset loading
+
+## Notebook Environment
+jupyter>=1.0.0
+ipykernel>=6.25.0
+notebook>=7.0.0  # Jupyter Notebook interface
+
+## Visualization & Analysis
+matplotlib>=3.7.0
+seaborn>=0.12.0
+pandas>=2.0.0  # For quick data exploration (though we prefer Polars)
+
+## Optional (Advanced - uncomment if you want to explore beyond these tutorials)
+# optax>=0.1.7  # JAX optimization library (when you outgrow manual SGD)
+# flax>=0.7.0  # High-level neural network library for JAX
